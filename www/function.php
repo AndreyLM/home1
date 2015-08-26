@@ -1,2 +1,5 @@
 <?php
-echo "function.php";
+function newFuncts()
+{
+
+}
