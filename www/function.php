@@ -3,3 +3,8 @@ function newFuncts()
 {
 
 }
+
+function second()
+{
+
+}
