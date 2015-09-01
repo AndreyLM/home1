@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>News</title>
@@ -8,8 +8,8 @@
     <?php
         foreach ($news as $key=>$value) {
         if (is_array($value)) { ?>
-            <h3><?php echo $value['header'];?></h3>
-            <p><?php echo $value['text'];?></p>
+            <p><?php echo $value['header'];?>
+            <a href="<?php echo '/home/www/view_article.php?id='.$value['id']; ?>">Read article</a></p>
     <?php
         }
     }

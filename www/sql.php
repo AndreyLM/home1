@@ -1,7 +1,30 @@
 <?php
+
+function connection()
+{
+    mysql_connect('localhost', 'root', '' );
+    mysql_select_db('news_bd');
+
+}
+
 /**
- * Created by PhpStorm.
- * User: Андрей
- * Date: 28.08.2015
- * Time: 10:58
+ * @param $query
  */
+
+function news_exec($query)
+{
+    connection();
+    $result=mysql_query($query);
+
+    $a=[];
+
+    while(!false==($row=mysql_fetch_array($result))) {
+
+    }
+
+
+}
+
+function news_GetAll() {
+
+}
