@@ -5,9 +5,9 @@
     <title>View article</title>
 </head>
 <body>
-    <h3><?php echo $article['header']; ?></h3>
-    <p><?php echo $article['text']; ?> </p>
-    <p>Publication date: <?php echo $article['date']; ?></p>
+    <h3><?php echo $article[0]['header']; ?></h3>
+    <p><?php echo $article[0]['article_text']; ?> </p>
+    <p>Publication date: <?php echo $article[0]['created_date']; ?></p>
     <p><a href="<?php echo '/home/www/index.php'; ?>">Back to all news</a></p>
 </body>
 </html>

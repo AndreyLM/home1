@@ -18,13 +18,33 @@ function news_exec($query)
 
     $a=[];
 
-    while(!false==($row=mysql_fetch_array($result))) {
-
+    while(!false==($row=mysql_fetch_assoc($result))) {
+       $a[]=$row;
     }
-
-
+    //var_dump($a);
+    return $a;
 }
 
-function news_GetAll() {
+function news_update($query)
+{
+    connection();
+    return mysql_query($query);
+}
+
+function news_GetAll_sql() {
+    $query='SELECT * FROM articles';
+    return news_exec($query);
+}
+
+function news_GetById_sql($id)
+{
+    $query='SELECT * FROM articles WHERE id='.$id;
+    return news_exec($query);
+}
+
+function news_Add_sql($header, $text)
+{
+    $query='INSERT INTO articles (header, article_text) VALUES ("'.$header.'", "'. $text.'")';
+    news_update($query);
 
 }

@@ -7,35 +7,26 @@
  */
 require_once __DIR__.'/../sql.php';
 
-function news_Get() {
-    $a=[];
-    $a[]=['id'=>1, 'header'=>'Tile1', 'text'=>'Text text text', 'date'=>25/06/2015];
-    $a[]=['id'=>2, 'header'=>'Tile2', 'text'=>'Text2 text2 text2', 'date'=>27/06/2015];
-    $a[]=['id'=>3, 'header'=>'Tile3', 'text'=>'Text3 text2 text2', 'date'=>24/06/2015];
+function news_GetAll() {
+    $arr=news_GetAll_sql();
+    if(empty($arr)) {
+        return false;
+    }
 
-    return $a;
-
+    return $arr;
 }
 
 function news_GetByID($id)
 {
-    $news=news_Get();
-    $article=[];
-
-    foreach($news as $key=>$row)
-    {
-        if(is_array($row))
-        {
-            if($id==$row['id']) {
-                $article=$row;
-            }
-        }
+    $news=news_GetById_sql($id);
+    if (empty($news)) {
+        return false;
     }
 
-    return $article;
+    return $news;
 }
 
 function news_Add($header, $text)
 {
-    return true;
+    return news_Add_sql($header, $text);
 }
