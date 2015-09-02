@@ -7,6 +7,36 @@
  */
 require_once __DIR__.'/../sql.php';
 
+class News
+{
+    private $news=[];
+
+    public function news_GetAll() {
+        $this->news=news_GetAll_sql();
+        if(empty($this->news)) {
+            return false;
+        }
+
+        return $this->news;
+    }
+
+    function news_GetByID($id)
+    {
+        $this->news=news_GetById_sql($id);
+        if (empty($news)) {
+            return false;
+        }
+
+        return $this->news;
+    }
+
+    static public function news_Add($header, $text)
+    {
+        return news_Add_sql($header, $text);
+    }
+}
+
+
 function news_GetAll() {
     $arr=news_GetAll_sql();
     if(empty($arr)) {
