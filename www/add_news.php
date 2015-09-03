@@ -11,7 +11,7 @@ if(isset($_POST['submit'])) {
     if(empty($_POST['header']) || empty($_POST['text'])) {
         echo 'You must enter all fields';
     }
-    if(false!==news_Add($_POST['header'], $_POST['text']))
+    if(false!==News::news_Add($_POST['header'], $_POST['text']))
     {
        echo 'Your article is successfully added.';
     }

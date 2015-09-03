@@ -6,7 +6,7 @@
 </head>
 <body>
     <?php
-        foreach ($n as $key=>$value) {
+        foreach ($articles->news_GetAll() as $key=>$value) {
         if (is_array($value)) { ?>
             <p><?php echo $value['header'];?>
             <a href="<?php echo '/home/www/view_article.php?id='.$value['id']; ?>">Read article</a></p>
